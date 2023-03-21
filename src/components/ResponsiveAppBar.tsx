@@ -49,10 +49,9 @@ export default function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" elevation={16}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -61,9 +60,9 @@ export default function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: "Roboto, sans-serif",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -102,9 +101,14 @@ export default function ResponsiveAppBar() {
             >
               {/* Hamburger menu */}
               {pages.map((page) => (
-                <Link to={page.value}>
+                <Link to={page.value} style={{ textDecoration: "none" }}>
                   <MenuItem key={page.key} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.key}</Typography>
+                    <Typography
+                      textAlign="center"
+                      sx={{ fontFamily: "Roboto, sans-seriff" }}
+                    >
+                      {page.key}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -167,7 +171,7 @@ export default function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <Link to={setting.value} style={{textDecoration:'none'}}>
+                <Link to={setting.value} style={{ textDecoration: "none" }}>
                   <MenuItem key={setting.key} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{setting.key}</Typography>
                   </MenuItem>
