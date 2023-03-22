@@ -9,7 +9,7 @@ export default function HomePage() {
         post={{
           description: "Lighting the world one life at a time",
           image:
-            "https://pbs.twimg.com/profile_banners/49741511/1668354175/600x200",
+            "src/assets/lighthouse..png",
           imageText: "Fill",
           title: "Light of Life Inc.",
         }}
